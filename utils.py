@@ -33,8 +33,8 @@ def calibrate(images,grid=(9,6)):
     return object_points,img_points
 
 def get_M_Minv():
-    src = np.float32([[(203, 720), (585, 460), (695, 460), (1127, 720)]])
-    dst = np.float32([[(320, 720), (320, 0), (960, 0), (960, 720)]])
+    src = np.float32([[(300, 300), (50, 600), (700, 580), (300, 300)]])
+    dst = np.float32([[(100, 0), (100, 900), (600, 900), (600, 0)]])
     M = cv2.getPerspectiveTransform(src, dst)
     Minv = cv2.getPerspectiveTransform(dst,src)
     return M,Minv
